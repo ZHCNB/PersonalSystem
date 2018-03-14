@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhc.admin.dao.UserDao">
+    <insert id="save" parameterType="com.zhc.admin.pojo.User">
+      insert into user(username, password, email) values(#{username}, #{password}, #{email})
+    </insert>
+
+    <select id="findByName" parameterType="String" resultType="com.zhc.admin.pojo.User">
+        select * from user where username = #{username}
+    </select>
+</mapper>
+

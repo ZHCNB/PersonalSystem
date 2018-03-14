@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+
+body, html {
+    height: 100%;
+    color: #505050;
+    letter-spacing: .01em;
+    font-size: 14px;
+    font-family: Lato, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    overflow: hidden;
+}
+
+/*main页面*/
+
+.container {
+    position: relative;
+    max-width: 100pc;
+    min-height: 100%;
+}
+
+.left {
+    float: left;
+    width: 270px;
+    background: #999;
+    height: 100%;
+    background-color: #1fa4b5;
+    text-align: center;
+}
+
+.right {
+    overflow: auto;
+    width: auto;
+    height: 100%;
+    　scrollbar-face-color: #f60;
+    　scrollbar-highlight-color: #F60;
+    　scrollbar-3dlight-color: #f60;
+    　scrollbar-darkshadow-color: #f60;
+    　scrollbar-Shadow-color: #f60;
+    　scrollbar-arrow-color: #000;
+    　scrollbar-track-color: #fff;
+}
+
+.right li{
+    font-size: 30px;
+}
+
+#header{
+    padding: 30px 0;
+    width: 100%;
+    height: auto;
+    border-bottom: none;
+    color: #eee;
+    line-height: 40px;
+}
+
+#header h1 {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+#header a{
+    color: #efefef;
+    text-shadow: 0 1px #666;
+    transition: color .3s;
+}
+
+#header a:hover{
+    color: #2479cc;
+}
+
+#nav ul li {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 1pc;
+    line-height: 40px;
+}
+
+.right-container{
+    padding: 0 70px 0 40px;
+}
+
+article{
+    position: relative;
+    padding: 30px 0;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+article .meta {
+    position: relative;
+    float: right;
+    width: auto;
+    color: #555;
+    text-align: right;
+    font-size: .9em;
+    line-height: 2;
+}
+
+article .meta a {
+    color: #999;
+}
+
+article h1.title {
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: 300;
+    font-size: 2em;
+    line-height: 35px;
+}
+
+article h1.title a {
+    color: #505050;
+    transition: color .3s;
+}
+
+article h1.title a:hover{
+    color: #2479cc;
+}
+
+article .entry-content {
+    color: #5d686f;
+    word-wrap: break-word;
+    font-size: 1pc;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
+
+article .entry-content p{
+    margin-top: 15px;
+}
+
+article .entry-content a{
+    color: #2479cc;
+    text-decoration: none;
+}
+
+article .entry-content a:hover{
+    text-decoration: underline;
+}
+
+/*comments.jsp*/
+
+.comments {
+    margin-top: 15px;
+}
+
+.comments div{
+    display: block;
+}
+
+.comment-num {
+    color: #999;
+    font-weight: 400;
+    font-size: 1.3em;
+}
+
+.comment-list {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.comment-main {
+    overflow: hidden;
+    padding: 1rem 0;
+    border-bottom: 1px dotted #e0e0e0;
+}
+
+.comment-main p {
+    margin: 0;
+}
+
+.avatar {
+    float: left;
+    display: block;
+    margin: 1.4rem 1rem 0 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.comment-at {
+    padding: 0 0 10px;
+}
+
+.comment-meta {
+    margin-top: 1rem;
+    color: #aaa;
+    font-size: .8rem;
+}
+
+.comment-author {
+    padding: .1rem .25rem;
+    border-radius: .25rem;
+    background: #eee;
+    font-size: .7rem;
+}
+
+.comments a {
+    color: #aaa;
+}
+
+
+.comment-reply {
+    float: right;
+}
+
+.c_input {
+    margin: 8px 0;
+    padding: 6px 9pt;
+    width: 100%;
+    height: 34px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+textarea.c_input {
+    height: 10rem;
+    resize: none;
+}
+
+.c_button {
+    display: block;
+    margin: 8px auto;
+    padding: 0 25px;
+    height: 36px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #999;
+    text-align: center;
+    line-height: 36px;
+    cursor: pointer;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+
+.c_button:hover{
+    border: 1px solid #2479cc;
+    color: #2479cc;
+}
+
+.footer{
+    padding: 15px 70px 15px 40px;
+    width: auto;
+    border-top: 1px solid #fff;
+    text-align: center;
+    font-size: .9em;
+    line-height: 2.2;
+}
+
+.footer a{
+    color: #2479cc;
+    transition: color .3s;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+
+

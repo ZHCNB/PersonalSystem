@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhc.blog.dao.CommentDao">
+
+    <resultMap type="Comment" id="AllComments">
+        <id property="id" column="id" />
+        <id property="aid" column="aid" />
+        <id property="parent_id" column="parent_id" />
+        <id property="c_name" column="c_name" />
+        <id property="c_email" column="c_email" />
+        <id property="create_time" column="create_time" javaType="java.sql.Timestamp"/>
+        <id property="content" column="content" />
+    </resultMap>
+
+    <delete id="deleteComment" parameterType="int">
+        DELETE FROM comments WHERE id = #{id};
+    </delete>
+
+    <select id="articleComment" parameterType="int" resultMap="AllComments">
+        SELECT * FROM comments WHERE parent_id = 0 AND aid = #{aid}
+    </select>
+
+    <select id="allComments" resultMap="AllComments">
+        SELECT * FROM comments
+    </select>
+
+    <insert id="saveComment" parameterType="Comment">
+        INSERT INTO comments(aid, parent_id, c_name, c_email, create_time, content)
+        VALUES (#{aid}, #{parent_id}, #{c_name}, #{c_email}, #{create_time}, #{content})
+    </insert>
+
+    <select id="commentNums" resultType="int">
+        SELECT COUNT(*) FROM comments WHERE parent_id = 0
+
+    </select>
+
+
+
+</mapper>

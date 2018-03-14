@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhc.blog.dao.ArticleDao">
+    <resultMap  type="Article" id="MyArticle">
+        <id property="aid" column="aid" />
+        <id property="authorId" column="authorId" />
+        <id property="hits" column="hits" />
+        <id property="title" column="title" />
+        <id property="url" column="url" />
+        <id property="content" column="content" />
+        <id property="type" column="type" />
+        <id property="status" column="status" />
+        <id property="commentsNum" column="commentsNum" />
+        <id property="allowComment" column="allowComment" />
+        <id property="create_time" column="create_time" javaType="java.sql.Timestamp"/>
+        <id property="alter_time" column="alter_time" />
+    </resultMap>
+
+    <insert id="save" parameterType="Article">
+        INSERT  INTO article(aid, authorId, title, hits, url, content, type, tag, status, commentsNum,
+        allowComment, create_time, alter_time)
+        VALUES (#{aid},#{authorId},#{title},#{hits},#{url},#{content},#{type},#{tag},#{status},#{commentsNum},
+        #{allowComment},#{create_time},#{alter_time})
+    </insert>
+
+    <select id="articleList" resultMap="MyArticle">
+        SELECT * FROM article ORDER BY alter_time DESC , aid DESC
+    </select>
+
+    <select id="articleFindById" parameterType="int" resultType="Article">
+        SELECT * FROM article WHERE aid = #{aid}
+    </select>
+    
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM article WHERE aid = #{aid}
+    </delete>
+
+    <update id="modifyArticle" parameterType="Article">
+        UPDATE article SET title = #{title}, url = #{url}, content = #{content}, type = #{type},
+        tag = #{tag} WHERE aid = #{aid}
+    </update>
+
+    <select id="articleFindByUrl" parameterType="String" resultType="Article">
+        SELECT * FROM article WHERE url = #{url}
+    </select>
+
+    <update id="articleHits" parameterType="String">
+        UPDATE article SET hits = hits + 1 WHERE url = #{url}
+    </update>
+
+    <update id="articleCommentsNum" parameterType="int">
+        UPDATE article SET commentsNum = commentsNum + 1 WHERE aid = #{aid}
+    </update>
+
+    <select id="articleNums" resultType="int">
+        SELECT COUNT(*) FROM article
+    </select>
+</mapper>

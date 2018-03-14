@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <!--别名-->
+        <typeAlias alias="Category" type="com.zhc.list.pojo.Category"/>
+        <typeAlias alias="User" type="com.zhc.admin.pojo.User" />
+        <typeAlias alias="Article" type="com.zhc.blog.pojo.Article" />
+        <typeAlias alias="Comment" type="com.zhc.blog.pojo.Comment" />
+        <typeAlias alias="Type" type="com.zhc.blog.pojo.Type" />
+    </typeAliases>
+</configuration>
